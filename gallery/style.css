@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.wrapper{
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100vh;
+}
+.container h1{
+   
+    font-size: 3em;
+    text-align: center;
+    margin: 20px 0;
+}
+.container{
+    
+    max-width: 1200px;
+    margin: 0 auto; /*To make the container fixed at center because the left and right margin will always be equal*/
+    height: 100%;
+    padding: 20px;
+
+}
+.gallery{
+   
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+.card{
+    /*we cannot hover over negative z index value or below */
+    width: 32%;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    
+}
+
+.card img{
+    object-fit: cover;
+    width: 100%; 
+    filter: grayscale(100%); /*BLACK AND WHITE ALL THE IMAGES */
+    box-shadow: 0 0 20px #333;
+    height: 100%;
+   
+}
+
+.card:hover img {
+    filter: grayscale(0%);
+  }
+
+.card:hover {
+    transform: scale(1.03); 
+    transition: 0.5s;   /*it will take 0.5 sec to scale and drop shadow*/
+    filter: drop-shadow(0 0 10px #333);   /* it will drop a shadow */
+ }
+
+
+ .card figcaption{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 25px;
+    width: 100%;
+    height: 20%;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    opacity: 0;
+    border-radius: 0 0 10px 10px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
+    transition: 0.3s;
+  }
+  .card:hover figcaption {
+    opacity: 1;
+    transform: scale(1.03);
+  }  
+  
+  
